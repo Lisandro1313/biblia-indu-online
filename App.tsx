@@ -5,6 +5,8 @@ import { Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import MainStack from './src/navigation/MainStack';
 import FavoritosScreen from './src/screens/FavoritosScreen';
+import MantrasScreen from './src/screens/MantrasScreen';
+import MeditacionScreen from './src/screens/MeditacionScreen';
 import { FavoritosProvider } from './src/context/FavoritosContext';
 
 const Tab = createBottomTabNavigator();
@@ -43,6 +45,32 @@ export default function App() {
             options={{
               title: 'पसंदीदा',
               tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>⭐</Text>,
+            }}
+          />
+          <Tab.Screen
+            name="MantrasTab"
+            component={MantrasScreen}
+            options={{
+              title: 'मंत्र',
+              tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🕉️</Text>,
+              headerShown: true,
+              headerStyle: { backgroundColor: '#2a1500' },
+              headerTintColor: '#FFB300',
+              headerTitleStyle: { fontWeight: '700' as const },
+              headerTitle: '🕉️ Mantras',
+            }}
+          />
+          <Tab.Screen
+            name="MeditacionTab"
+            component={MeditacionScreen}
+            options={{
+              title: 'ध्यान',
+              tabBarIcon: ({ color }) => <Text style={{ fontSize: 22, color }}>🧘</Text>,
+              headerShown: true,
+              headerStyle: { backgroundColor: '#2a1500' },
+              headerTintColor: '#FFB300',
+              headerTitleStyle: { fontWeight: '700' as const },
+              headerTitle: '🧘 Meditación',
             }}
           />
         </Tab.Navigator>
