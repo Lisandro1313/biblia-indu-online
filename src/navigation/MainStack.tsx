@@ -3,8 +3,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import InicioScreen from '../screens/InicioScreen';
 import DiosesScreen from '../screens/DiosesScreen';
 import TextosScreen from '../screens/TextosScreen';
+import type { MainStackParamList } from './types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<MainStackParamList>();
 
 const screenOptions = {
   headerStyle: { backgroundColor: '#2a1500' },

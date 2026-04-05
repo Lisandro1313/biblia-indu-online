@@ -1,8 +1,12 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { getVersoDelDia, VERSOS_DESTACADOS } from '../data/gitaApi';
+import type { StackScreenProps } from '@react-navigation/stack';
+import type { MainStackParamList } from '../navigation/types';
 
-export default function InicioScreen({ navigation }: any) {
+type Props = StackScreenProps<MainStackParamList, 'Inicio'>;
+
+export default function InicioScreen({ navigation }: Props) {
   const versoDelDia = getVersoDelDia();
 
   return (
